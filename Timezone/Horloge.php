@@ -31,7 +31,7 @@ class Horloge {
     
     public function getVille()
     {
-        return explode('/', $localisation)[1];
+        return explode('/', $this->localisation)[1];
     }
 }
 ?>
