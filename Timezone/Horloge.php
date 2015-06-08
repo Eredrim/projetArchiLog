@@ -18,7 +18,7 @@ class Horloge {
     
     function __construct($ville, $format = "H:i")
     {
-        $fuseau = DateTimeZone($ville);
+        $fuseau = DateTimeZone::__construct($ville);
         $this->ville = $ville;
     }
     
