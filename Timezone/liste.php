@@ -7,14 +7,12 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/liste.css">
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <title></title>
     </head>
     <body>
-        <div class="gridPiece" id="gp1">test</div>
-        <?php
-        // put your code here
-        ?>
+        <div class="listPiece"><span>Hello world !</span></div>
+        <div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>
     </body>
 </html>
