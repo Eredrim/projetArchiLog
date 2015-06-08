@@ -31,7 +31,8 @@ class Horloge {
     
     public function getVille()
     {
-        return preg_replace('_', ' ', explode('/', $this->localisation)[1]);
+        $customVille = explode('/', $this->localisation)[1];
+        return str_replace('_', ' ', $customVille);
     }
 }
 ?>
