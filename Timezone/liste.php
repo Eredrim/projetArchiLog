@@ -16,7 +16,7 @@ and open the template in the editor.
         <div class="listPiece"><span>
             <?php
                 $horloge1 = new Horloge("Paris");
-                echo($horloge1.getHeure());
+                echo($horloge1->getHeure());
             ?>
             </span></div>
         <div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>
