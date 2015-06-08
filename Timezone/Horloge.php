@@ -13,13 +13,13 @@
  */
 class Horloge {
     private $fuseau;
-    private $ville;
+    private $localisation;
     private $format;
     
-    function __construct($ville, $format = "H:i")
+    function __construct($localisation, $format = "H:i")
     {
-        $this->fuseau = new DateTimeZone($ville);
-        $this->ville = $ville;
+        $this->fuseau = new DateTimeZone($localisation);
+        $this->localisation = $localisation;
         $this->format = $format;
     }
     
@@ -28,4 +28,10 @@ class Horloge {
         $date = new DateTime(null, $this->fuseau);
         return $date->format($this->format);
     }
+    
+    public function getVille()
+    {
+        return explode('/', $localisation)[1];
+    }
 }
+?>
