@@ -18,13 +18,13 @@ class Horloge {
     
     function __construct($ville, $format = "H:i")
     {
-        $fuseau = new DateTimeZone($ville);
+        $this->fuseau = new DateTimeZone($ville);
         $this->ville = $ville;
     }
     
     public function getHeure()
     {
-        $date = new DateTime(null, $fuseau);
-        return $date->format($format);
+        $date = new DateTime(null, $this->fuseau);
+        return $date->format($this->format);
     }
 }
