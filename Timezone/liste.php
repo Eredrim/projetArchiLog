@@ -15,7 +15,7 @@ and open the template in the editor.
     <body>
         <div class="listPiece"><span>
             <?php
-                $horloge1 = new Horloge("Paris");
+                $horloge1 = new Horloge("Europe/Paris");
                 echo($horloge1->getHeure());
             ?>
             </span></div>

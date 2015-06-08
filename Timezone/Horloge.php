@@ -20,6 +20,7 @@ class Horloge {
     {
         $this->fuseau = new DateTimeZone($ville);
         $this->ville = $ville;
+        $this->format = $format;
     }
     
     public function getHeure()
