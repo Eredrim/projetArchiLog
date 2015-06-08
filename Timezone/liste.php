@@ -1,4 +1,3 @@
-<?php include "Horloge.php" ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,15 +9,16 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/liste.css">
         <link rel="stylesheet" type="text/css" href="css/global.css">
+        <script src="js/script.js"></script>
+        <script src="js/jquery-2.1.3.min.js"></script>
         <title></title>
     </head>
     <body>
-        <div class="listPiece"><span>
-            <?php
-                $horloge1 = new Horloge("Europe/Paris");
-                echo($horloge1->getHeure());
-            ?>
-            </span></div>
+        <div id="container"></div>
         <div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>
+        <script>
+            charger();
+            setInterval(function() {charger();}, 1000);
+        </script>
     </body>
 </html>
