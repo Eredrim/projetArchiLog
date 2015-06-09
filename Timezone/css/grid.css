@@ -9,11 +9,63 @@ and open the template in the editor.
 */
 
 .gridPiece{
-    width: 10ch;
-    height: 10ch;
+    width: 160px;
+    height: 155px;
+    padding-top: 5px;
 }
 
 #gp1{
-    background: yellow;
+    background: blueviolet;
 }
 
+.clock
+{
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height:150px;
+    margin: 0 auto;
+    position: relative;
+    width: 150px;
+}
+
+.hour
+{
+    height: 50px;
+    width: 5px;
+    background: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    animation: tick 43200s infinite linear;
+    -webkit-animation: tick 43200s infinite linear;
+}
+
+.minute
+{
+    height: 70px;
+    width: 5px;
+    background: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    animation: tick 3600s infinite linear;
+    -webkit-animation: tick 3600s infinite linear;
+}
+
+.hour, .minute
+{
+    transform-origin: 2px 100%;
+    -webkit-transform-origin: 2px 100%;
+}
+
+@keyframes tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes tick {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
