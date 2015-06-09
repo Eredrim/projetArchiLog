@@ -53,5 +53,22 @@ class Horloge {
         $angleM = $angleM = intval(explode(":",$this->getHeure())[1])/60*360;
         return $angleM;
     }
+    
+    public function getCouleur()
+    {
+        $date = new DateTime(null, $this->fuseau);
+        $sunInfos = date_sun_info($date
+                , $fuseau->getLocation()['latitude']
+                , $fuseau->getLocation()['longitude']);
+        
+        if($date >= $sunInfos['civil_twilight_begin'] && $date <= $sunInfos['sunrise'])
+        { return "#dd7632"; }
+        if($date <= $sunInfos['civil_twilight_end'] && $date >= $sunInfos['sunset'])
+        { return "#e7a235"; }
+        if($date <= $sunInfos['civil_twilight_begin'] && $date >= $sunInfos['civil_twilight_end'])
+        { return "#5b52aa"; }
+        if($date >= $sunInfos['sunrise'] && $date <= $sunInfos['sunset'])
+        { return "#eeb934"; }
+    }
 }
 ?>
