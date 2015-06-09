@@ -19,15 +19,14 @@ and open the template in the editor.
                 <div class="hour"></div>
                 <div class="minute"></div>
             </div>
+            <?php
+                include "Horloge.php";
+                $horloge1 = new Horloge("Europe/Paris");
+                echo '<script>$(".hour").css("transform", "rotate(' . $horloge1->getAngleAigHeure() . 'deg)");';
+                echo '$(".minute").css("transform", "rotate(' . $horloge1->getAngleAigMin() . 'deg)");</script>';
+                echo '<div class="ville">'.strtoupper($horloge1->getVille()).'</div>';
+                echo '<div class="date">'.$horloge1->getDate().'</div>';
+            ?>
         </div>
-        <?php
-            include "Horloge.php";
-            $horloge1 = new Horloge("Europe/Paris");
-            $angleH = intval(explode(":",$horloge1->getHeure())[0])/12*360%360;
-            $angleM = intval(explode(":",$horloge1->getHeure())[1])/60*360;
-            echo '<script>$(".hour").css("transform", "rotate('.$angleH.'deg)");';
-            echo '$(".minute").css("transform", "rotate('.$angleM.'deg)");</script>';
-        ?>
-        
     </body>
 </html>

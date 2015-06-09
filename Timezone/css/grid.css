@@ -9,9 +9,24 @@ and open the template in the editor.
 */
 
 .gridPiece{
-    width: 160px;
-    height: 155px;
+    width: 200px;
+    height: 200px;
     padding-top: 5px;
+    color: white;
+    font-family: arial, sans-serif;
+    text-align: center;
+}
+
+.gridPiece .ville
+{
+    font-size: 1.1em;
+}
+
+.gridPiece .date
+{
+    opacity: 0.7;
+    font-size: 0.9em;
+    margin-top: 5px;
 }
 
 #gp1{
@@ -23,27 +38,27 @@ and open the template in the editor.
     border: 5px solid #FFF;
     border-radius: 50%;
     box-sizing: border-box;
-    height:150px;
-    margin: 0 auto;
+    height:120px;
+    margin: 10px auto;
     position: relative;
-    width: 150px;
+    width: 120px;
 }
 
 .hour
 {
-    height: 50px;
+    height: 45px;
     width: 5px;
     background: #FFF;
     position: absolute;
     left: 50%;
-    top: 20px;
+    top: 10px;
     animation: tick 43200s infinite linear;
     -webkit-animation: tick 43200s infinite linear;
 }
 
 .minute
 {
-    height: 70px;
+    height: 55px;
     width: 5px;
     background: #FFF;
     position: absolute;
