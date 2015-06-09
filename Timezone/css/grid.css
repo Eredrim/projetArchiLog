@@ -10,7 +10,7 @@ and open the template in the editor.
 
 .gridPiece{
     width: 200px;
-    height: 200px;
+    height: 195px;
     padding-top: 5px;
     color: white;
     font-family: arial, sans-serif;
@@ -30,7 +30,7 @@ and open the template in the editor.
 }
 
 #gp1{
-    background: blueviolet;
+    background: #ccc;
 }
 
 .clock

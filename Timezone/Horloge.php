@@ -56,18 +56,16 @@ class Horloge {
     
     public function getCouleur()
     {
-        $date = new DateTime(null, $this->fuseau);
-        $sunInfos = date_sun_info($date
-                , $fuseau->getLocation()['latitude']
-                , $fuseau->getLocation()['longitude']);
+        $date = (new DateTime(null, $this->fuseau))->getTimestamp();
+        $sunInfos = date_sun_info($date, $this->fuseau->getLocation()['latitude'], $this->fuseau->getLocation()['longitude']);
         
-        if($date >= $sunInfos['civil_twilight_begin'] && $date <= $sunInfos['sunrise'])
+        if($date >= $sunInfos['civil_twilight_begin'] && $date <= $sunInfos['sunrise']) //lever du soleil
         { return "#dd7632"; }
-        if($date <= $sunInfos['civil_twilight_end'] && $date >= $sunInfos['sunset'])
+        if($date <= $sunInfos['civil_twilight_end'] && $date >= $sunInfos['sunset']) //coucher du soleil
         { return "#e7a235"; }
-        if($date <= $sunInfos['civil_twilight_begin'] && $date >= $sunInfos['civil_twilight_end'])
+        if($date <= $sunInfos['civil_twilight_begin'] || $date >= $sunInfos['civil_twilight_end']) //nuit
         { return "#5b52aa"; }
-        if($date >= $sunInfos['sunrise'] && $date <= $sunInfos['sunset'])
+        if($date >= $sunInfos['sunrise'] && $date <= $sunInfos['sunset']) //jour
         { return "#eeb934"; }
     }
 }
