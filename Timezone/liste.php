@@ -15,7 +15,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="container"></div>
-        <div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>
+        <!--<div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>-->
         <script>
             charger();
             setInterval(function() {charger();}, 1000);
