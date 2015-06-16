@@ -29,7 +29,6 @@ class UserManager {
     public function __construct()
     {
         $listeUtilisateurs = new ArrayObject(User);
-        insertUser("admin", "admin");
     }
     
     public function insertUser($login, $password)
@@ -64,9 +63,18 @@ class UserManager {
         {
             if($listeUtilisateurs[$index]->checkPassword($password))
             {
-                setcookie("LogedIn", true);
+                setcookie("LogedIn", $login);
             }
         }
         return false;
+    }
+    
+    public function getHorloges()
+    {
+        $cookie = $_COOKIE["LogedIn"];
+        if($index = userExists($cookie))
+        {
+            return $listeUtilisateurs[$index]->getListeHorloges();
+        }
     }
 }
