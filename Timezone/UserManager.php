@@ -1,6 +1,7 @@
 <?php
 
 include 'User.php';
+include 'mSQL.php';
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,67 +15,68 @@ include 'User.php';
  * @author clem-62
  */
 class UserManager {
-    private $listeUtilisateurs = null;
-    private $instance = null;
+    private $sql = null;
+    private static $instance = null;
     
-    public function getInstance()
+    public static function getInstance()
     {
-        if(!$instance)
+        if(!self::$instance)
         {
-            $instance = new UserManager();
+            self::$instance = new UserManager();
         }
-        return $instance;
+        return self::$instance;
     }
     
-    public function __construct()
+    private function __construct()
     {
-        $listeUtilisateurs = new ArrayObject(User);
+        $this->sql = new mSQL();
     }
     
     public function insertUser($login, $password)
     {
-        if(userExists($login)) { return false; }
+        if($this->userExists($login)) { return false; }
         else
         {
-            if(rtrim($login) == "" or rtrim($password) == "") { return false; }
-            if(!$listeUtilisateurs) { $listeUtilisateurs = new ArrayObject(User); }
-            $listeUtilisateurs.push_back(new User($login, $password));
+            if(rtrim($login) == "" or rtrim($password) == "") { 
+                return false; 
+            }
+            else
+            {
+                $this->sql->Request("insert into utilisateur set('".$login."','".$password."'");
+            }
         }
     }
     
     public function userExists($utilisateur)
     {
-        if($listeUtilisateurs)
+        if(mysqli_num_rows($this->sql->Request('select * from utilisateur where login = \''.$utilisateur.'\'')) > 0)
         {
-            for($i=0; i<count($listeUtilisateurs); $i++)
-            {
-                if($listeUtilisateurs[$i]->getLogin() == rtrim($utilisateur))
-                {
-                    return $i;
-                }
-            }
+            return true;
         }
         return false;
     }
-    
+      
     public function verifUser($login, $password)
     {
-        if($index = userExists($login))
+        if($this->userExists($login))
         {
-            if($listeUtilisateurs[$index]->checkPassword($password))
+            $user = new User($login);
+            if($user->checkPassword($password))
             {
                 setcookie("LogedIn", $login);
             }
+            return true;
         }
         return false;
     }
     
     public function getHorloges()
     {
-        $cookie = $_COOKIE["LogedIn"];
-        if($index = userExists($cookie))
+        $login = $_COOKIE["LogedIn"];
+        if($this->userExists($login))
         {
-            return $listeUtilisateurs[$index]->getListeHorloges();
+            $user = new User($login);
+            return $user->getListeHorloges();
         }
     }
 }

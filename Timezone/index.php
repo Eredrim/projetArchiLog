@@ -15,7 +15,22 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            include "Horloge.php";
+            include "UserManager.php";
+            $um = UserManager::getInstance();
+            $um->verifUser('test', 'test');
+            $horloges = $um->getHorloges();
+            foreach ($horloges as $horloge){
+                echo "<div class='gridPiece' style='background: ".$horloge->getCouleur().";' id='gp1'>";
+                echo '<div class="clock">';
+                echo '<div class="hour" id="h1"></div>';
+                echo '<div class="minute" id="m1"></div>';
+                echo '</div>';
+                echo '<script>$("#h1").css("transform", "rotate(' . $horloge->getAngleAigHeure() . 'deg)");';
+                echo '$("#m1").css("transform", "rotate(' . $horloge->getAngleAigMin() . 'deg)");</script>';
+                echo '<div class="ville">'.strtoupper($horloge->getVille()).'</div>';
+                echo '<div class="date">'.$horloge->getDate().'</div></div>';
+            }
+            /*
             $horloge1 = new Horloge("America/Buenos_Aires");
             echo "<div class='gridPiece' style='background: ".$horloge1->getCouleur().";' id='gp1'>";
             echo '<div class="clock">';
@@ -56,6 +71,7 @@ and open the template in the editor.
             echo '$("#m4").css("transform", "rotate(' . $horloge4->getAngleAigMin() . 'deg)");</script>';
             echo '<div class="ville">'.strtoupper($horloge4->getVille()).'</div>';
             echo '<div class="date">'.$horloge4->getDate().'</div></div>';
+             */
             ?>
         </div>
     </body>
