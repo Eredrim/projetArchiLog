@@ -19,16 +19,18 @@ and open the template in the editor.
             $um = UserManager::getInstance();
             $um->verifUser('test', 'test');
             $horloges = $um->getHorloges();
+            $i=1;
             foreach ($horloges as $horloge){
                 echo "<div class='gridPiece' style='background: ".$horloge->getCouleur().";' id='gp1'>";
                 echo '<div class="clock">';
-                echo '<div class="hour" id="h1"></div>';
-                echo '<div class="minute" id="m1"></div>';
+                echo '<div class="hour" id="h'.$i.'"></div>';
+                echo '<div class="minute" id="m'.$i.'"></div>';
                 echo '</div>';
-                echo '<script>$("#h1").css("transform", "rotate(' . $horloge->getAngleAigHeure() . 'deg)");';
-                echo '$("#m1").css("transform", "rotate(' . $horloge->getAngleAigMin() . 'deg)");</script>';
+                echo '<script>$("#h'.$i.'").css("transform", "rotate(' . $horloge->getAngleAigHeure() . 'deg)");';
+                echo '$("#m'.$i.'").css("transform", "rotate(' . $horloge->getAngleAigMin() . 'deg)");</script>';
                 echo '<div class="ville">'.strtoupper($horloge->getVille()).'</div>';
                 echo '<div class="date">'.$horloge->getDate().'</div></div>';
+                $i++;
             }
             /*
             $horloge1 = new Horloge("America/Buenos_Aires");
