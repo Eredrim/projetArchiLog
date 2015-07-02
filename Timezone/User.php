@@ -16,7 +16,7 @@ class User {
         $this->listeHorloges = array();
         $sqlHelper = new mSQL();
         $data = mysqli_fetch_assoc($sqlHelper->Request('SELECT password FROM utilisateur '
-                . 'WHERE LOGINUTILISATEUR LIKE \''. $login . '\';'));
+                . 'WHERE LOGINUTILISATEUR = \''. $login . '\';'));
         $this->login = $login;
         $this->password = $data['password'];
         
