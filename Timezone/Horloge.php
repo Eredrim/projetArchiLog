@@ -75,5 +75,10 @@ class Horloge {
         if($date >= $sunInfos['sunrise'] && $date <= $sunInfos['sunset']) //jour
         { return "#eeb934"; }
     }
+    
+    public function getFuseau()
+    {
+        return $this->fuseau;
+    }
 }
 ?>
