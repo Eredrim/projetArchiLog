@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Horloge
  *
@@ -15,7 +8,7 @@ class Horloge {
     private $fuseau;
     private $localisation;
     private $format;
-    private $formatDate = "d/m/Y";
+    private $formatDate;
     private $identifiant;
     
     function __construct($localisation, $format = "H:i", $id = null)

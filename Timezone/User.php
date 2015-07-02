@@ -2,16 +2,8 @@
 
 include("Horloge.php");
 include("HorlogeDAO.php");
-        
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- * Description of User
- *
  * @author clem-62
  */
 class User {
@@ -23,7 +15,8 @@ class User {
     public function __construct($login) {
         $this->listeHorloges = array();
         $sqlHelper = new mSQL();
-        $data = mysqli_fetch_assoc($sqlHelper->Request('SELECT password FROM utilisateur'));
+        $data = mysqli_fetch_assoc($sqlHelper->Request('SELECT password FROM utilisateur '
+                . 'WHERE LOGINUTILISATEUR LIKE \''. $login . '\';'));
         $this->login = $login;
         $this->password = $data['password'];
         
