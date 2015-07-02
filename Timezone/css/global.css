@@ -1,4 +1,50 @@
 html, body{
   margin: 0;  
+  font-family: helvetica, arial, sans-serif;
+}
+
+#connexion{
+    text-align: center;
+    background: #007FFF;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#connexion > button {
+    padding: 10px;
+    font-size: 18px;
+    background: #1034A6;
+    color: white;
+    border: none;
+}
+
+#connexion > button:hover {
+    background: #22427C;
+    cursor: pointer;
+}
+
+#connexion > input {
+    margin: 20px;
+    padding: 5px;
+    font-size: 16px;
+    width: 300px;
+}
+
+#connexion > div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 45px;
+    color: white;
+}
+
+#connexion > span{
+    color: white;
+    font-style: italic;
 }
 

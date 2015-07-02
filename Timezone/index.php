@@ -16,8 +16,8 @@ and open the template in the editor.
     <body>
         <?php
             include "UserManager.php";
+            include 'connexion.php';
             $um = UserManager::getInstance();
-            $um->verifUser('test', 'test');
             $horloges = $um->getHorloges();
             $i=1;
             foreach ($horloges as $horloge){
