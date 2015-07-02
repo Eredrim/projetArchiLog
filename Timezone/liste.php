@@ -14,6 +14,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <?php include 'header.php'; ?>
         <div id="container"></div>
         <!--<div class="listPiece" style="background: blueviolet"><span>Hello world !</span></div>-->
         <script>

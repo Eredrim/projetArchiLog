@@ -7,5 +7,5 @@
  */
 
 if(!isset($_COOKIE["LogedIn"])){
-   echo "<script>document.location.href='login.php'</script>";
+   echo "<script>document.location='login.php'</script>";
 }

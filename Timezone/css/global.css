@@ -54,6 +54,10 @@ html, body{
     border-bottom: solid 1px #ccc;
     height: 40px;
     width: 100%;
+    font-size: 24px;
+    text-align: center;
+    color: #677179;
+    line-height: 40px;
 }
 
 #plus-button{
@@ -65,5 +69,6 @@ html, body{
     color: #677179;
     text-align: center;
     line-height: 40px;
+    z-index: 2;
 }
 
