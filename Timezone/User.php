@@ -15,8 +15,7 @@ class User {
     public function __construct($login) {
         $this->listeHorloges = array();
         $sqlHelper = new mSQL();
-        $data = mysqli_fetch_assoc($sqlHelper->Request('SELECT password FROM utilisateur '
-                . 'WHERE LOGINUTILISATEUR = \''. $login . '\';'));
+        $data = mysqli_fetch_assoc($sqlHelper->Request("SELECT password FROM utilisateur WHERE login = '". $login . "'"));
         $this->login = $login;
         $this->password = $data['password'];
         
