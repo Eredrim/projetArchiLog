@@ -16,12 +16,19 @@ class Horloge {
     private $localisation;
     private $format;
     private $formatDate = "d/m/Y";
+    private $identifiant;
     
-    function __construct($localisation, $format = "H:i")
+    function __construct($localisation, $format = "H:i", $id = null)
     {
         $this->fuseau = new DateTimeZone($localisation);
         $this->localisation = $localisation;
         $this->format = $format;
+        $this->identifiant = $id;
+    }
+    
+    public function getID()
+    {
+        return $this->identifiant;
     }
     
     public function getHeure()
