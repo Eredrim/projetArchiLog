@@ -13,7 +13,7 @@
  */
 class HorlogeDAO {
     
-    public function insertionHorlogeDAO(Horloge $hor, User $user)
+    public static function insertionHorlogeDAO(Horloge $hor, User $user)
     {
         $connexion = new mSQL();
         
@@ -22,7 +22,7 @@ class HorlogeDAO {
                 . $hor->fuseau() .");");
     }
     
-    public function suppressionHorlogeDAO($identifiant)
+    public static function suppressionHorlogeDAO($identifiant)
     {
         $connexion = new mSQL();
         $connexion->Request("DELETE FROM HORLOGE WHERE ID = ". $identifiant .");");

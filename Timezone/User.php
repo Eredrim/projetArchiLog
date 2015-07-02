@@ -1,6 +1,8 @@
 <?php
 
 include("Horloge.php");
+include("HorlogeDAO.php");
+        
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -45,5 +47,18 @@ class User {
     public function getListeHorloges() {
         return $this->listeHorloges;
     }
-
+    
+    public function addToListeHorloge(Horloge $hor)
+    {
+        array_push($listeHorloge, $hor);
+        //Insertion en base
+        HorlogeDAO::insertionHorlogeDAO($hor, $this);
+    }
+    
+    public function deleteFromListeHorloge(Horloge $hor)
+    {
+        array_push($listeHorloge, $hor);
+        //Suppresion de la base (enfin de l'objet dans la base, pas suppression de la base elle-même)
+        HorlogeDAO::suppressionHorlogeDAOHorlogeDAO($hor);
+    }
 }
