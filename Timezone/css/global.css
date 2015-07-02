@@ -1,13 +1,14 @@
 html, body{
   margin: 0;  
   font-family: helvetica, arial, sans-serif;
+  background: #677179;
 }
 
 #connexion{
     text-align: center;
-    background: #007FFF;
+    background: #22427C;
     width: 500px;
-    height: 400px;
+    height: 420px;
     margin: auto;
     position: absolute;
     top:0;
@@ -19,13 +20,13 @@ html, body{
 #connexion > button {
     padding: 10px;
     font-size: 18px;
-    background: #1034A6;
+    background: #007FFF;
     color: white;
     border: none;
 }
 
 #connexion > button:hover {
-    background: #22427C;
+    background: #2C75FF;
     cursor: pointer;
 }
 
@@ -46,5 +47,23 @@ html, body{
 #connexion > span{
     color: white;
     font-style: italic;
+}
+
+#header{
+    background: #efefef;
+    border-bottom: solid 1px #ccc;
+    height: 40px;
+    width: 100%;
+}
+
+#plus-button{
+    height: 40px;
+    width: 40px;
+    background: white;
+    float: right;
+    font-size: 40px;
+    color: #677179;
+    text-align: center;
+    line-height: 40px;
 }
 

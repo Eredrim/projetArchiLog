@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <script src="js/script.js"></script>
         <script src="js/jquery-2.1.3.min.js"></script>
         <!--<link rel="stylesheet" type="text/css" href="css/global.css">-->
@@ -17,9 +18,11 @@ and open the template in the editor.
         <?php
             include "UserManager.php";
             include 'connexion.php';
+            include 'header.php';
             $um = UserManager::getInstance();
             $horloges = $um->getHorloges();
             $i=1;
+            echo "<div id=wrapper>";
             foreach ($horloges as $horloge){
                 echo "<div class='gridPiece' style='background: ".$horloge->getCouleur().";' id='gp1'>";
                 echo '<div class="clock">';
@@ -32,6 +35,7 @@ and open the template in the editor.
                 echo '<div class="date">'.$horloge->getDate().'</div></div>';
                 $i++;
             }
+            echo "</div>";
             /*
             $horloge1 = new Horloge("America/Buenos_Aires");
             echo "<div class='gridPiece' style='background: ".$horloge1->getCouleur().";' id='gp1'>";

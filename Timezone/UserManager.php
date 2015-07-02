@@ -37,7 +37,7 @@ class UserManager {
             if (rtrim($login) == "" or rtrim($password) == "") {
                 return false;
             } else {
-                $this->sql->Request("insert into utilisateur set('" . $login . "','" . $password . "'");
+                $this->sql->Request("insert into utilisateur set('" . $login . "','" . md5($password) . "'");
             }
         }
     }
