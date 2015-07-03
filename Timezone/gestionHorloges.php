@@ -53,5 +53,9 @@ and open the template in the editor.
                 ?>
             </form>
         </div>
+    <script>
+        $("#plus-button").html("&#8617;");
+        $("#plus-button").parent().attr("href", "./");
+    </script>
     </body>
 </html>
