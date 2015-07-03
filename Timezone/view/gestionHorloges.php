@@ -1,13 +1,13 @@
         <div id="wrapper">
             <form action="./?v=gestionHorloges" method="POST" id="searchTimeZone">
-                <div id="search-wrapper">
+                <div id="searchWrapper">
                     <input name="fuseau" list="listeTZ" autocomplete="off"/><div onclick="$('#searchTimeZone').submit()">+</div>
                 </div>
                 <datalist id="listeTZ">
                     <?php
                     $timezone_identifiers = DateTimeZone::listIdentifiers();
                     for ($i = 0; $i < count($timezone_identifiers); $i++) {
-                        echo "<option class='searchOption' value='$timezone_identifiers[$i]'>$timezone_identifiers[$i]</option>\n";
+                        echo "<option class='searchOption'>$timezone_identifiers[$i]</option>\n";
                     }
                     ?>
                 </datalist>
@@ -25,8 +25,8 @@
             </form>
         </div>
     <script>
-        $("#plus-button").html("&#8617;");
-        $("#plus-button").parent().attr("href", "./");
+        $("#plusButton").html("&#8617;");
+        $("#plusButton").parent().attr("href", "./");
     </script>
     </body>
 </html>

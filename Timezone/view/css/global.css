@@ -61,7 +61,7 @@ html, body{
     line-height: 40px;
 }
 
-#plus-button{
+#plusButton{
     height: 40px;
     width: 40px;
     background: white;
@@ -91,7 +91,7 @@ html, body{
     margin-right: auto;
 }
 
-#search-wrapper > input{
+#searchWrapper > input{
     width: calc(100% - 50px);
     height: 40px;
     font-size: 22px;
@@ -107,12 +107,12 @@ html, body{
     color: #677179;
 }
 
-#search-wrapper{
+#searchWrapper{
     width: 98%;
     margin-top:30px;
 }
 
-#search-wrapper > div{
+#searchWrapper > div{
     background: #007FFF;
     font-size: 30px;
     color: white;

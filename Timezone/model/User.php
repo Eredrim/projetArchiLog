@@ -22,7 +22,7 @@ class User {
         
         $req2 = $sqlHelper->Request('SELECT * FROM horloge where loginUtilisateur = \''.$login.'\'');
         while($data2 = mysqli_fetch_assoc($req2)){
-            array_push($this->listeHorloges, new Horloge($data2['fuseau'], "H:i", $data2['id']));
+            array_push($this->listeHorloges, new Horloge($data2['fuseau'], $data2['id']));
         }
     }
 

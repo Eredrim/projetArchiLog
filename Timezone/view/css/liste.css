@@ -10,9 +10,21 @@
     font-size: 2em;
     padding-left: 1%;
     padding-right: 1%;
-    line-height: 15vh;
+    line-height: 10vh;
 }
 
 .listPiece > span.right {
     float: right;
+    line-height: 15vh;
+}
+
+.listPiece > div.date {
+    font-size: 0.8em;
+    line-height: 0.8em;
+    opacity: 0.6;
+    padding-left: 1%;
+}
+
+#container{
+    margin-bottom: 40px;
 }

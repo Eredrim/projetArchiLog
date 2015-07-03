@@ -7,15 +7,12 @@
 class Horloge {
     private $fuseau;
     private $localisation;
-    private $format;
-    private $formatDate;
     private $identifiant;
     
-    function __construct($localisation, $format = "H:i", $id = null)
+    function __construct($localisation, $id = null)
     {
         $this->fuseau = new DateTimeZone($localisation);
         $this->localisation = $localisation;
-        $this->format = $format;
         $this->identifiant = $id;
     }
     
@@ -28,16 +25,16 @@ class Horloge {
         $this->identifiant = $identifiant;
     }
    
-    public function getHeure()
+    public function getHeure($format = "H:i")
     {
         $date = new DateTime(null, $this->fuseau);
-        return $date->format($this->format);
+        return $date->format($format);
     }
     
-    public function getDate()
+    public function getDate($format = "l, F d, Y")
     {
         $date = new DateTime(null, $this->fuseau);
-        return $date->format($this->formatDate);
+        return $date->format($format);
     }
     
     public function getVille()
