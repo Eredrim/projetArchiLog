@@ -1,6 +1,6 @@
 <?php
 
-include 'User.php';
+include_once('User.php');
 
 /**
  * Description of UserManager

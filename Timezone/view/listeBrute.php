@@ -1,5 +1,5 @@
 <?php
-include "UserManager.php";
+include "../model/UserManager.php";
 $um = UserManager::getInstance();
 $um->verifUser('test', 'test');
 $horloges = $um->getHorloges();

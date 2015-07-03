@@ -1,8 +1,8 @@
 <?php
 
-include("Horloge.php");
-include("HorlogeDAO.php");
-include("mSQL.php");
+include_once("Horloge.php");
+include_once("HorlogeDAO.php");
+include_once("mSQL.php");
 
 /**
  * @author clem-62
