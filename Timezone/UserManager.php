@@ -1,7 +1,6 @@
 <?php
 
 include 'User.php';
-include 'mSQL.php';
 
 /**
  * Description of UserManager

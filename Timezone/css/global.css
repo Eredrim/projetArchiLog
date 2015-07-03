@@ -2,6 +2,7 @@ html, body{
   margin: 0;  
   font-family: helvetica, arial, sans-serif;
   background: #677179;
+  min-height: 100vh;
 }
 
 #connexion{
@@ -72,3 +73,78 @@ html, body{
     z-index: 2;
 }
 
+.footer{
+    width: 100%;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    bottom: 0;
+    position: fixed;
+    line-height: 40px;
+}
+
+#wrapper {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-wrapper > input{
+    width: calc(100% - 50px);
+    height: 40px;
+    font-size: 22px;
+    color: #677179;
+    border: none;
+    padding-left: 5px;
+    display: inline-block;
+}
+
+.searchOption{
+    height: 40px;
+    font-size: 22px;
+    color: #677179;
+}
+
+#search-wrapper{
+    width: 98%;
+    margin-top:30px;
+}
+
+#search-wrapper > div{
+    background: #007FFF;
+    font-size: 30px;
+    color: white;
+    border: none;
+    height: 42px;
+    width: 42px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+    line-height: 42px;
+    cursor: pointer;
+}
+
+#lstHorlogesTitre{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #eee;
+}
+
+.horlogeToSuppr{
+    width: calc(98% - 20px);
+    height: 50px;
+    background: #555;
+    color: #ccc;
+    font-size: 18px;
+    margin: 5px 0;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.horlogeToSuppr > div {
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+}

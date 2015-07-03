@@ -85,9 +85,3 @@ and open the template in the editor.
     -webkit-transform: rotate(360deg);
   }
 }
-
-#wrapper {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}

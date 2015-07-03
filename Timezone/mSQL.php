@@ -17,6 +17,10 @@ class mSQL {
     }
     
     public function Request($sql){
+        if(strstr(strtolower($sql), 'insert')){
+            mysqli_query($this->db, $sql);
+            return mysqli_insert_id($this->db);
+        }
         return mysqli_query($this->db, $sql);
     }
     

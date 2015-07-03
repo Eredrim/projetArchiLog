@@ -2,6 +2,7 @@
 
 include("Horloge.php");
 include("HorlogeDAO.php");
+include("mSQL.php");
 
 /**
  * @author clem-62
@@ -19,9 +20,9 @@ class User {
         $this->login = $login;
         $this->password = $data['password'];
         
-        $req2 = $sqlHelper->Request('SELECT fuseau FROM horloge where loginUtilisateur = \''.$login.'\'');
+        $req2 = $sqlHelper->Request('SELECT * FROM horloge where loginUtilisateur = \''.$login.'\'');
         while($data2 = mysqli_fetch_assoc($req2)){
-            array_push($this->listeHorloges, new Horloge($data2['fuseau']));
+            array_push($this->listeHorloges, new Horloge($data2['fuseau'], "H:i", $data2['id']));
         }
     }
 
@@ -42,14 +43,15 @@ class User {
     
     public function addToListeHorloge(Horloge $hor)
     {
-        array_push($listeHorloge, $hor);
+        array_push($this->listeHorloges, $hor);
         //Insertion en base
-        HorlogeDAO::insertionHorlogeDAO($hor, $this);
+        $idHor = HorlogeDAO::insertionHorlogeDAO($hor, $this);
+        $hor->setID($idHor);
     }
     
     public function deleteFromListeHorloge(Horloge $hor)
     {
-        array_push($listeHorloge, $hor);
+        array_push($this->listeHorloges, $hor);
         //Suppresion de la base (enfin de l'objet dans la base, pas suppression de la base elle-même)
         HorlogeDAO::suppressionHorlogeDAOHorlogeDAO($hor);
     }

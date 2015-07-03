@@ -24,6 +24,10 @@ class Horloge {
         return $this->identifiant;
     }
     
+    function setID($identifiant) {
+        $this->identifiant = $identifiant;
+    }
+   
     public function getHeure()
     {
         $date = new DateTime(null, $this->fuseau);
@@ -69,9 +73,9 @@ class Horloge {
         { return "#eeb934"; }
     }
     
-    public function getFuseau()
+    public function getLocalisation()
     {
-        return $this->fuseau;
+        return $this->localisation;
     }
 }
 ?>

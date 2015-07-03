@@ -10,15 +10,13 @@ class HorlogeDAO {
     {
         $connexion = new mSQL();
         
-        $connexion->Request("INSERT INTO HORLOGE (LOGINUTILISATEUR, FUSEAU) VALUES("
-                . $user->getLogin() .", "
-                . $hor->fuseau() .");");
+        return $connexion->Request("INSERT INTO horloge VALUES(null, '".$user->getLogin()."', '".$hor->getLocalisation()."');");
     }
     
     public static function suppressionHorlogeDAO($identifiant)
     {
         $connexion = new mSQL();
-        $connexion->Request("DELETE FROM HORLOGE WHERE ID = ". $identifiant .");");
+        $connexion->Request("DELETE FROM HORLOGE WHERE ID = ".$identifiant.";");
     }
     
 }
